@@ -66,8 +66,8 @@ box-shadow:0 0 3px #ccc;
 min-height:100%; text-align:center;}
 </style>
 </head>
-<body style="background:#f8f8f8;">
-<?php
+<body>
+<? php/*
 	$id  = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 	if($id) {
 		    function request_curl($url) {
@@ -110,7 +110,7 @@ min-height:100%; text-align:center;}
 			else {
 				echo '抱歉，您访问的页面不存在!';
 				exit;
-			}
+			}*/
 		?>
 			<!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------->
 			<div id="loadBox"><span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
@@ -244,28 +244,63 @@ min-height:100%; text-align:center;}
                 <section id="main_content">
                     <header>
                         <figure class="user">
-                            <img class="avatar" src="<?php echo $result['logo'];?>" />
+                            <img class="avatar" src="<?php //echo $result['logo'];?>" />
                             <figurecaption>
-                                <?php echo $result['username'];?><?php echo $result['createTime'];?>
-                                <?php// if($result['isVip'] == 1) { ?>
-                                    <span class="vip-icon"></span>
-                                <?php// } ?>
-                                <span class="author-label">楼主</span>
+                            	<p>
+                            		<spna>纸笔画素颜<?php //echo $result['username'];?></spna>
+	                                <?php// if($result['isVip'] == 1) { ?>
+	                                    <span class="vip-icon"></span>
+	                                <?php// } ?>
+	                                <span class="author-label">楼主</span>
+	                            </p>
+	                            <p>
+	                            	<span>6-10<?php //echo $result['createTime'];?></span>
+	                            </p>
                             </figurecaption>
                         </figure>
                     </header>
+                    <section class="content">
+						<h1>眼部瑜伽按摩手法 解除疲劳放松眼睛<?php //echo $result['title'];?></h1>
+
+						<?php //if($result['tag']==1) { ?>
+						<img src="images/index/jp.png"  style="margin-right:3.5%;" />
+						<?php //}	?>
+
+						<p>
+							<?php //echo nl2br($result['content']);?>
+							我们都在繁忙劳累中穿梭，工作压抑、疲劳不堪
+							的时候，想找一种健康的方式去宣泄，去放松，
+							去休憩。下面的眼部瑜伽按摩手法练习将帮助您
+							迅速有效的放松身体和精神的紧张，平复局促安
+							的情绪。做这些练习时，要像做身体练习时一样，
+							保持小心、细致。最重要的是把动作，呼吸和意
+							念集中结合成一个统一体。
+						</p>
+
+					<?php// if(count($result['figure'])>0) {
+						foreach($result['figure'] as $value) { ?>
+							<p><img src="<?php //echo $value['thumb'];?>" style="width:100%"></p>
+					<?php// }	} ?>
+                    </section>
+                    <footer>
+						<img src="images/index/like.png" style="width:1em;">&nbsp;&nbsp;
+						<span>2048<?php //echo $result['liked'];?></span>
+						<img src="images/index/hf.png" style="width:1em;">&nbsp;&nbsp;
+						<span>6789<?php //echo $result['reply'];?></span>
+                    </footer>
                 </section>
+                <span class="hairline"></span>
             </article>
 			<!-- InstanceEndEditable -->
 			<!--html可编辑区域结束 -->
 			<div id="alertBox"><p class="text"></p><p class="btn"><a class="close">确认</a></p></div>
 			<div id="turnBox"><span></span></div>
-		<?php
+		<?php/*
 	}
 	else {
 		echo '抱歉，您访问的页面不存在!';
 		exit;
-	}
+	}*/
 ?>
 
 
